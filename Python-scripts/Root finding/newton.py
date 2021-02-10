@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 
 def f(x):
     # Lecture example
-    return 4 * math.sin(x)  # 7*x**2 - 12*x + 1
+    return x**3 - 1.2*x**2 - 8.19*x + 13.23   # 7*x**2 - 12*x + 1
 
 # Defining derivative of function (f')
 
 
 def g(x):
     # Lecture example
-    return 4 * math.cos(x)  # 14*x - 12
+    return 3*x**2 - 2.4*x - 8.19  # 14*x - 12
 
 # Implementing Newton Raphson Method
 
@@ -30,7 +30,7 @@ def newtonRaphson(x0, e, N):
 
         prev_x0 = x0
         x1 = x0 - f(x0)/g(x0)
-        print('Iteration-%d, x1 = %0.8f and f(x1) = %0.6f' % (step, x1, f(x1)))
+        print('Iteration-%d, x1 = %0.7f and f(x1) = %0.7f' % (step, x1, f(x1)))
         epochs.append(step)
         x1_val.append(x1)
         fx_val.append(f(x1))
@@ -46,7 +46,7 @@ def newtonRaphson(x0, e, N):
         # condition = abs(f(x1)) > e
 
         # here, root value is considered for error
-        condition = abs(x1 - prev_x0) > e and f(x1) != 0
+        condition = abs(x1 - prev_x0) > e and f(x1) != 0 and abs(f(x1)) > e
 
     if flag == 1:
         print('\nRequired root is: %0.8f' % x1)
@@ -55,7 +55,7 @@ def newtonRaphson(x0, e, N):
 
 
 # Initial guess
-x0 = 1.318116
+x0 = 5
 # Error
 e = 1e-6
 # Max iterations
@@ -75,5 +75,5 @@ plt.xlabel('x')
 # naming the y axis
 plt.ylabel('f(x)')
 # giving a title to my graph
-plt.title('Newton method')
+plt.title('Newton method x0 = 5')
 plt.show()

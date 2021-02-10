@@ -4,23 +4,24 @@ import matplotlib.pyplot as plt
 # Defining Function
 
 
+# Defining Function
 def f(x):
     # Lecture example
-    return math.exp(x) - x - 1  # x**3 - 7*x**2 + 11*x - 5
+    return x**3 - 1.2*x**2 - 8.19*x + 13.23
 
 # Defining derivative of function (f')
 
 
 def g(x):
     # Lecture example
-    return math.exp(x) - 1  # 3*x**2 - 14*x + 11
+    return 3*x**2 - 2.4*x - 8.19
 
 # Defining double derivative of function (f'')
 
 
 def h(x):
     # Lecture example
-    return 6*x - 14
+    return 6*x - 2.4
 
 # Implementing Newton Raphson Method
 
@@ -30,7 +31,6 @@ def newtonRaphsonMultiRoot(x0, e, N):
     step = 1
     flag = 1
     condition = True
-
     while condition:
         if g(x0)**2 - f(x0)*h(x0) == 0.0:
             print('Divide by zero error!')
@@ -39,10 +39,12 @@ def newtonRaphsonMultiRoot(x0, e, N):
         prev_x0 = x0
         x1 = x0 - (f(x0) * g(x0))/(g(x0)**2 - f(x0)*h(x0))
         print('Iteration-%d, x1 = %0.6f and f(x1) = %0.6f' % (step, x1, f(x1)))
+        
         epochs.append(step)
         x1_val.append(x1)
         fx_val.append(f(x1))
 
+        
         x0 = x1
         step = step + 1
 
@@ -63,12 +65,14 @@ def newtonRaphsonMultiRoot(x0, e, N):
 
 
 # Initial guess
-x0 = -1
+x0 = 5
 # Error
-e = 1e-5
+e = 1e-6
 # Max iterations
-N = 20
+N = 10
 
+# Starting Multi-root Newton Raphson Method
+# newtonRaphsonMultiRoot(x0, e, N)
 epochs = []
 x1_val = []
 fx_val = []
