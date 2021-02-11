@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 
 
 def f(x):
-    return x**3 - 1.2*x**2 - 8.19*x + 13.23 
+    return x**3 - 1.2*x**2 - 8.19*x + 13.23
 
 # Defining derivative of function (f')
 
 
 def g(x):
-    return 3*x**2 - 2.4*x - 8.19  
+    return 3*x**2 - 2.4*x - 8.19
 
 # Defining double derivative of function (f'')
 
@@ -75,7 +75,6 @@ def newtonRaphsonMultiRoot(x0, e, N):
         prev_x0 = x0
         x1 = x0 - (f(x0) * g(x0))/(g(x0)**2 - f(x0)*h(x0))
         print('Iteration-%d, x1 = %0.6f and f(x1) = %0.6f' % (step, x1, f(x1)))
-
 
         nm_epochs.append(step)
         nm_x1_val.append(x1)

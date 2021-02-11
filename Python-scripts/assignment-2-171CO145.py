@@ -58,6 +58,7 @@ def SOR(dim, A, B, ω, X0, tol, n):
         X0 = X1
     return X1
 
+
 def gauss_siedel(dim, A, B, X0, tol, n):
     """
     Arguments
@@ -104,7 +105,6 @@ def gauss_siedel(dim, A, B, X0, tol, n):
         iterations += 1
         X0 = X1
     return X1
-
 
 
 A = np.array([
