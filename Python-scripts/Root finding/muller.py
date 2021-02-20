@@ -35,7 +35,7 @@ def muller(f, x0, x1, x2, tol, N):
         h = -2*f(x2)/E
         x = x2 + h
 
-        print('Iteration', n, 'x', x, 'f(x)', f(x))
+        print('Iteration', n, f'x{n + 2} = {x}', f'f(x{n + 2}) = {f(x)}')
         if abs(h) < tol:
             break
         n += 1
@@ -49,7 +49,8 @@ def muller(f, x0, x1, x2, tol, N):
 # Using muller's method
 
 
-def f(x): return x**4 - 4*x**2 - 3*x + 5
+def f(x):
+    return x**4 - 4*x**2 - 3*x + 5
 
 
 x0 = -1
