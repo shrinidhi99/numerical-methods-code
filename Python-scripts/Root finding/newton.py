@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 
 def f(x):
     # Lecture example
-    return 4 * math.sin(x)
+    return x**2 - 2*x*math.exp(-x) + math.exp(-2*x)
 
 # Defining derivative of function (f')
 
 
 def g(x):
-    return 4 * math.cos(x)
+    return 2*x - 2*math.exp(-x) + 2*x*math.exp(-x) - 2*math.exp(-2*x)
 
 # Implementing Newton Raphson Method
 
@@ -54,7 +54,7 @@ def newtonRaphson(x0, e, N):
 
 
 # Initial guess
-x0 = 1.318116
+x0 = 0
 # Error
 e = 1e-6
 # Max iterations

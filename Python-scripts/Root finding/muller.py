@@ -50,14 +50,14 @@ def muller(f, x0, x1, x2, tol, N):
 
 
 def f(x):
-    return x**4 - 4*x**2 - 3*x + 5
+    return 600*x**4 - 550*x**3 + 200*x**2 - 20*x - 1
 
 
-x0 = -1
-x1 = complex(-1, 1)
-x2 = complex(-1, 0.9)
+x0 = complex(0.1, -0.1)
+x1 = complex(0.2, -0.2)
+x2 = complex(0.5, -0.5)
 tol = 1e-6
-n = 10
+n = 20
 
 root = muller(f, x0, x1, x2, tol, n)
 print('root', root)

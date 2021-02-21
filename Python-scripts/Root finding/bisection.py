@@ -1,11 +1,12 @@
 import matplotlib.pyplot as plt
+import math
 
 # Defining Function
 
 
 def f(x):
     # Lecture example, give first guess = 1, second guess = 2
-    return x**6 - x - 1
+    return math.cos(x)
 
 # Implementing Bisection Method
 
@@ -17,6 +18,7 @@ def bisection(x0, x1, e):
     while condition:
         x2 = (x0 + x1)/2
         print('Iteration-%d, x2 = %0.6f and f(x2) = %0.6f' % (step, x2, f(x2)))
+        print(f'Error: {abs(x1 - x0)}')
         epochs.append(step)
         x2_val.append(x2)
         fx_val.append(f(x2))
@@ -37,11 +39,11 @@ def bisection(x0, x1, e):
 
 
 # First guess
-x0 = 1.0
+x0 = 0
 # Second guess
-x1 = 2.0
+x1 = 4
 # Error
-e = 1e-3
+e = 1e-7
 
 epochs = []
 x2_val = []

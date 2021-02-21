@@ -53,27 +53,28 @@ def jacobi(dim, A, B, X0, tol, n):
 
 
 A = np.array([
-    [-10, -8, 0],
-    [-8, 10, -1],
-    [0, -1, 10]
+    [7, 1, 1],
+    [-3, 7, -1],
+    [-2, 5, 9]
 ], dtype=float)
-B = np.array([-6, 9, 28], dtype=float)
+B = np.array([6, -26, 1], dtype=float)
 
 dim = A.shape[0]
 tol = 1e-5
 n = 10
-init_approx = np.array(dim * [0.])
+# init_approx = np.array(dim * [0.])
+init_approx = np.array([0, 0.5, 1])
 
-# check diagonal dominance
-for i in range(dim):
-    v1 = abs(A[i][i])
-    s = 0
-    for j in range(dim):
-        if i != j:
-            s += abs(A[i][j])
-    if s > v1:
-        print('A is not diagonally dominant. Change A and B accordingly')
-        exit()
+# # check diagonal dominance
+# for i in range(dim):
+#     v1 = abs(A[i][i])
+#     s = 0
+#     for j in range(dim):
+#         if i != j:
+#             s += abs(A[i][j])
+#     if s > v1:
+#         print('A is not diagonally dominant. Change A and B accordingly')
+#         exit()
 
 epochs = []
 x_one = []

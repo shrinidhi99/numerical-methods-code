@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 
 def f(x):
     # Lecture example
-    return x**3 + x**2 - 1
+    return math.pow(31, 1/3)
 
 # Re-writing f(x)=0 to x = g(x)
 
 
 def g(x):
     # Lecture example
-    return 1 / math.sqrt(1 + x)
+    return 31/x**2
 
 # Implementing Fixed Point Iteration Method
 
@@ -53,9 +53,9 @@ def fixedPointIteration(x0, e, N):
 
 
 # Initial guess
-x0 = 0.5
+x0 = 3
 # Error
-e = 1e-4
+e = 1e-5
 # Max iterations
 N = 10
 

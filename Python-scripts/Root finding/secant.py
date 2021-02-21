@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def f(x):
     # Lecture example
     # initial x0=3, x1=3.5
-    return 7 * x**2 - 12*x + 1
+    return x**3 - 2*x**2 - 5
 
 # Implementing Secant Method
 
@@ -45,12 +45,12 @@ def secant(x0, x1, e, N):
 
 
 # Initial guess
-x0 = 3
-x1 = 3.5
+x0 = 4
+x1 = 1
 # Error
-e = 1e-5
+e = 1e-6
 # Max iterations
-N = 10
+N = 20
 
 epochs = []
 x2_val = []
