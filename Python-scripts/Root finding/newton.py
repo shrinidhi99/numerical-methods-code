@@ -44,6 +44,8 @@ def newtonRaphson(x0, e, N):
         # uncomment this if you want function value to be within error
         # condition = abs(f(x1)) > e
 
+        error_val.append(abs(x1 - prev_x0))
+
         # here, root value is considered for error
         condition = abs(x1 - prev_x0) > e and f(x1) != 0 and abs(f(x1)) > e
 
@@ -63,6 +65,7 @@ N = 20
 epochs = []
 x1_val = []
 fx_val = []
+error_val = []
 
 # Starting Newton Raphson Method
 newtonRaphson(x0, e, N)
@@ -74,5 +77,5 @@ plt.xlabel('x')
 # naming the y axis
 plt.ylabel('f(x)')
 # giving a title to my graph
-plt.title('Newton method x0 = 5')
+plt.title(f'Newton method x0 = {x0}')
 plt.show()

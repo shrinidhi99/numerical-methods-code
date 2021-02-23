@@ -12,7 +12,7 @@ def f(x):
 
 def g(x):
     # Lecture example
-    return 31/x**2
+    return 31 / x**2
 
 # Implementing Fixed Point Iteration Method
 
@@ -72,5 +72,5 @@ plt.xlabel('x')
 # naming the y axis
 plt.ylabel('f(x)')
 # giving a title to my graph
-plt.title('Fixed point iteration')
+plt.title(f'Fixed point iteration x0 = {x0}')
 plt.show()

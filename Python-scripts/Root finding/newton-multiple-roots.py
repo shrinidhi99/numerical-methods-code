@@ -86,5 +86,5 @@ plt.xlabel('x')
 # naming the y axis
 plt.ylabel('f(x)')
 # giving a title to my graph
-plt.title('Newton multiple roots')
+plt.title(f'Newton multiple roots x0 = {x0}')
 plt.show()

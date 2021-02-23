@@ -1,5 +1,6 @@
 import numpy as np
 from math import inf
+import matplotlib.pyplot as plt
 
 
 def newton_raphson(F, J, X, tol, n):
@@ -24,7 +25,11 @@ def newton_raphson(F, J, X, tol, n):
         # Calculate error vector
         E = -np.dot(np.linalg.inv(J(X)), F(X))
         X = X + E
-        print('n:', iterations, 'X:', X)
+        epochs.append(iterations)
+        x1_val.append(X[0])
+        y1_val.append(X[1])
+        fx_val.append(f(X))
+        print('n:', iterations, 'X:', X, ' f(x): ', f(X))
         if np.max(abs(E)) < tol:
             break
         iterations += 1
@@ -64,7 +69,29 @@ initial_approx = np.array([1.5, 0.5])
 tol = 1e-6
 n = 10
 
+epochs = []
+x1_val = []
+y1_val = []
+fx_val = []
+
 newton_raphson(F, J, initial_approx, tol, n)
+
+# print(len(x1_val))
+# print(len(fx_val))
+
+# print(x1_val)
+# print(fx_val)
+
+plt.scatter(x1_val, fx_val, s=20, marker='x')
+plt.scatter(y1_val, fx_val, s=20, marker='x')
+
+# naming the x axis
+plt.xlabel('x')
+# naming the y axis
+plt.ylabel('f(x)')
+# giving a title to my graph
+plt.title(f'Newton method Initial approx = {initial_approx}')
+plt.show()
 
 # Use this for <= 3 variables
 # f = lambda x, y: x**2 + x*y + y**2 - 7
