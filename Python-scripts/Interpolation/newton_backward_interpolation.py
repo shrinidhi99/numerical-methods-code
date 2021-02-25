@@ -40,11 +40,11 @@ def newton_backward_interpolation(x, y, x_pred):
     return y_pred
 
 # Set of distint points
-x = [1, 1.05, 1.10, 1.15, 1.20, 1.25]
-y = [0.682689, 0.706282, 0.728668, 0.749856, 0.769861, 0.788700]
+x = [140, 150, 160, 170, 180]
+y = [3.685, 4.854, 6.302, 8.076, 10.225]
 
 # Find interpolated value for
-x_pred = 1.235
+x_pred = 175
 
 y_pred = newton_backward_interpolation(x, y, x_pred)
 print('Interpolated value', y_pred)

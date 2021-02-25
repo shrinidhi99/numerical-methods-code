@@ -39,11 +39,15 @@ def newton_forward_interpolation(x, y, x_pred):
     return y_pred
 
 # Set of distint points
-x = [1, 1.02, 1.04, 1.06, 1.08]
-y = [0.242, 0.2371, 0.2323, 0.2275, 0.2227]
+x = [140, 150, 160, 170, 180]
+y = [3.685, 4.854, 6.302, 8.076, 10.225]
 
 # Find interpolated value for
-x_pred = 1.015
+x_pred = 175
 
 y_pred = newton_forward_interpolation(x, y, x_pred)
 print('Interpolated value', y_pred)
+
+# Temp: 140, 150, 160, 170, 180
+# Pressure: 3.685, 4.854, 6.302, 8.076, 10.225
+# h = 10
