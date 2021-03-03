@@ -38,11 +38,14 @@ def lagrange_interpolation(x, y, x_pred):
 # x = [300, 304, 305, 307]
 # y = [2.4771, 2.4829, 2.4843, 2.4871]
 
-x = [1,1.1,1.3,1.4]
-y = [log(xi) for xi in x]
+# x = [1,1.1,1.3,1.4]
+# y = [log(xi) for xi in x]
+
+x = [1, 2, 7, 8]
+y = [4, 5, 5, 4]
 
 # Find interpolated value for
-x_pred = 301
+x_pred = 4.5
 
 y_pred = lagrange_interpolation(x, y, x_pred)
 print('Interpolated value', y_pred)

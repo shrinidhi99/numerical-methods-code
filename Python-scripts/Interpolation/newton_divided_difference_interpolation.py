@@ -23,10 +23,11 @@ def newton_divided_difference_interpolation(x, y, x_pred):
     for i in range(0, n):
         y_pred += x_coef * dd_col[0]
         x_coef *= (x_pred - x[i])
-        for j in range(0, n-i-1):
-            dd_col[j] = (dd_col[j+1] - dd_col[j])/(x[j+i+1] - x[j])
-    
+        for j in range(0, n - i - 1):
+            dd_col[j] = (dd_col[j + 1] - dd_col[j])/(x[j + i + 1] - x[j])
+
     return y_pred
+
 
 # Set of distint points
 x = [0.5, 1.5, 3.0, 5.0, 6.5, 8.0]
