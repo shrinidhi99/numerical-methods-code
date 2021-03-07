@@ -30,8 +30,8 @@ def newton_divided_difference_interpolation(x, y, x_pred):
 
 
 # Set of distint points
-x = [0.5, 1.5, 3.0, 5.0, 6.5, 8.0]
-y = [1.625, 5.875, 31.0, 131.0, 282.125, 521.0]
+x = [3, 2, 1, -1]
+y = [3, 12, 15, -21]
 
 # Find interpolated value for
 x_pred = 7
