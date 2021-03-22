@@ -1,6 +1,7 @@
 import numpy as np
 from math import log
 
+
 def curve_fit(x, y, deg=1):
     """
     Arguments
@@ -26,33 +27,39 @@ def curve_fit(x, y, deg=1):
     for i in range(0, n):
         for j in range(0, n):
             X[i][j] = np.sum(x**(i+j))
-    
+
     # Initialize Y
     for i in range(0, n):
         Y[i] = np.sum(y*x**(i))
 
-    A =  np.linalg.solve(X, Y)
+    A = np.linalg.solve(X, Y)
 
     # compute error
-    error=0
+    error = 0
     for i in range(len(x)):
-        polyval=0
-        for j in range(0,len(A)):
+        polyval = 0
+        for j in range(0, len(A)):
             polyval += A[j]*(x[i])**j
         # print('polyval',polyval)
         error += (y[i] - polyval)**2
     print('Error:', error)
 
-    A= np.flip(A)
+    A = np.flip(A)
     return A
+
 
 # Degree 2 example
 # x = np.array([0, 0.25, 0.5, 0.75, 1.0])
 # y = np.array([1.0000, 1.2840, 1.6487, 2.1170, 2.7183])
-x = np.array([4,4.2,4.5,4.7,5.1,5.5,5.9,6.3,6.8,7.1])
-y = np.array([102.56,113.18,130.11,142.05,167.53,195.14,224.87,256.73,299.50,326.72])
-y = np.array([log(yi) for yi in y])
-deg = 1
+# x = np.array([4, 4.2, 4.5, 4.7, 5.1, 5.5, 5.9, 6.3, 6.8, 7.1])
+# y = np.array([102.56, 113.18, 130.11, 142.05, 167.53,
+#               195.14, 224.87, 256.73, 299.50, 326.72])
+# y = np.array([log(yi) for yi in y])
+
+x = np.array([-1, 0, 1, 1.5])
+y = np.array([3.1, 0.9, 2.9, 2])
+
+deg = 2
 
 A = curve_fit(x, y, deg)
 print('Coefficients (highest power of x to lowest):', A)
