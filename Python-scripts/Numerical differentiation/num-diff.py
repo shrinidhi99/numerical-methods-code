@@ -132,7 +132,7 @@ def three_point_midpoint_double_der(x, y):
 
 
 x = [1, 1.05, 1.1, 1.15, 1.2, 1.25]
-y = [0.682689, 0.706282, 0.728668, 0.749856, 0.769861, 0.788700]
+y = [1, 2, 4, 8, 16, 32]
 assert len(x) == len(y), 'len of x and y are not equal'
 
 two_point_first_der(x, y)
