@@ -1,3 +1,6 @@
+import math
+
+
 def proterm(i, value, x):
     pro = 1
     for j in range(i):
@@ -44,14 +47,10 @@ def printDiffTable(y, n):
 
 # Driver Code
 
-
-
-
-import math
-
-
+# uncomment function as per the question
 def f(x):
-    return math.exp(-0.5 * x**2)
+    # return math.exp(-0.5 * x**2)
+    return 1 / math.sqrt(1 + 25 * x ** 2)
 
 
 a = -1
@@ -81,7 +80,7 @@ for N in n:
     # number of inputs given
     # n = 5
     y = [[0 for i in range(len(X))]
-        for j in range(len(X))]
+         for j in range(len(X))]
     x = X
 
     # y[][] is used for divided difference
@@ -101,4 +100,4 @@ for N in n:
 
     # printing the value (Ignore this part since it is not asked in question)
     print("\nValue at", value, "is",
-        round(applyFormula(value, x, y, N), 6))
+          round(applyFormula(value, x, y, N), 6))
