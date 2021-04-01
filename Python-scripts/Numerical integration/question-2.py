@@ -4,6 +4,7 @@
 
 import math
 from scipy.integrate import quad
+import matplotlib.pyplot as plt
 
 # computes trapezoidal rule of given 3 points
 
@@ -83,3 +84,22 @@ for n in N:
     print(
         f'Difference between Integral and Simpson\'s 1/3rd rule: {abs(integral - S_1_3)}')
     print(f'Difference between Quad and Simpson\'s 1/3rd rule: {abs(quad - T_R)}\n')
+
+quad_tr = [0.049864654948662546, 0.054086781061416955, 0.055124436206535]
+integral_tr = [0.005604100106663, 0.001381973993908, 0.000344318848789]
+
+quad_s_1_3 = [0.049864654948662, 0.049864654948662, 0.055124436206535]
+integral_s_1_3 = [0.000429650610723, 2.5401377009348636e-05, 1.5661995831361963e-06]
+
+n = [6, 12, 24]
+
+plt.plot(n, quad_tr, label='Quad error TR')
+plt.plot(n, integral_tr, label='Integral error TR')
+
+plt.plot(n, quad_s_1_3, label='Quad error S 1/3rd')
+plt.plot(n, integral_s_1_3, label='Integral error S 1/3rd')
+
+plt.xlabel("N")
+plt.ylabel("Comparison")
+plt.legend()
+plt.show()
