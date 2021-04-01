@@ -1,4 +1,5 @@
 import math
+import matplotlib.pyplot as plt
 
 
 def proterm(i, value, x):
@@ -49,8 +50,23 @@ def printDiffTable(y, n):
 
 # uncomment (return statement) function as per the question
 def f(x):
-    return math.exp(-0.5 * x**2)
-    # return 1 / math.sqrt(1 + 25 * x ** 2)
+    # return math.exp(-0.5 * x**2)
+    return 1 / math.sqrt(1 + 25 * x ** 2)
+
+# Pn(x) after computing for n = 5
+def P_n_5(x):
+    # return 0.09379 * x ** 4 - 0.4862 * x ** 2 + 0.99895
+    return 0.45955 * x ** 4 - 0.88732 * x ** 2 + 0.62388
+
+# Pn(x) after computing for n = 10
+def P_n_10(x):
+    # return -0.0002 * x ** 10 + 0.00254 * x ** 8 - 0.0208 * x ** 6 + 0.12499 * x ** 4 - 0.5 * x ** 2 + 1
+    return -15.00417 * x ** 10 + 45.99417 * x ** 8 - 52.74827 * x ** 6 + 27.96477 * x ** 4 - 7.01038 * x ** 2 + 1
+
+# Pn(x) after computing for n = 20
+def P_n_20(x):
+    # return -0.00026 * x ** 10 + 0.0026 * x ** 8 + 0.02083 * x ** 6 + 0.125 * x ** 4 - 0.5 * x ** 2 + 1
+    return 1511.83622 * x ** 20 - 8392.97914 * x ** 18 + 20086.79289 * x ** 16 - 27117.16328 * x ** 14 + 22694.66896 * x ** 12 - 12197.39918 * x ** 10 + 4227.72566 * x ** 8 - 930.43382 * x ** 6 + 127.44361 * x ** 4 - 11.2958 * x ** 2 + 1
 
 # function to compute x[i]
 def x_i(i, n):
@@ -105,3 +121,66 @@ for N in n:
     # printing the value (Ignore this part since it is not asked in question)
     print("\nValue at", value, "is",
           round(applyFormula(value, x, y, N), 6))
+
+# Error calculation
+
+t = a
+h = (b - a)/60
+
+y_pred_5 = []
+y_pred_10 = []
+y_pred_20 = []
+
+x_i = []
+y_i = []
+
+x_i.append(a)
+y_i.append(f(a))
+
+for i in range(60):
+    x_i.append(t + h)
+    y_i.append(f(t + h))
+    t += h
+
+for N in n:
+
+    error = 0
+
+    if N == 5:
+        for i in range(len(x_i)):
+            error += abs(y_i[i] - (P_n_5(x_i[i])))
+
+            y_pred_5.append(P_n_5(x_i[i]))
+
+        print(f'For n = {N}, error = {error}')
+
+
+    elif N == 10:
+        for i in range(len(x_i)):
+            error += abs(y_i[i] - (P_n_10(x_i[i])))
+
+            y_pred_10.append(P_n_10(x_i[i]))
+
+        print(f'For n = {N}, error = {error}')
+
+    elif N == 20:
+        for i in range(len(x_i)):
+            error += abs(y_i[i] - (P_n_20(x_i[i])))
+
+            y_pred_20.append(P_n_20(x_i[i]))
+
+        print(f'For n = {N}, error = {error}')
+
+plt.plot(x_i, y_i, label='Y exact')
+plt.plot(x_i, y_pred_5, label='Y predicted, N = 5')
+plt.plot(x_i, y_pred_10, label='Y predicted, N = 10')
+plt.plot(x_i, y_pred_20, label='Y predicted, N = 20')
+
+# naming the x axis
+plt.xlabel('X')
+# naming the y axis
+plt.ylabel('Y')
+# giving a title to my graph
+plt.title('Newton\'s divided difference')
+plt.legend(loc='upper left')
+plt.show()
