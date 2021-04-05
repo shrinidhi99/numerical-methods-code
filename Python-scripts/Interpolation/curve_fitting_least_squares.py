@@ -47,26 +47,10 @@ def curve_fit(x, y, deg=1):
     A = np.flip(A)
     return A
 
+x = np.array([1.47, 1.50, 1.52, 1.55, 1.57, 1.60, 1.63, 1.65, 1.68, 1.70, 1.73, 1.75, 1.78, 1.80, 1.83])
+y = np.array([52.21, 53.12, 54.48, 55.84, 57.20, 58.57, 59.93, 61.29, 63.11, 64.47, 66.28, 68.10, 69.92, 72.19, 74.46])
 
-# Degree 2 example
-# x = np.array([0, 0.25, 0.5, 0.75, 1.0])
-# y = np.array([1.0000, 1.2840, 1.6487, 2.1170, 2.7183])
-# x = np.array([4, 4.2, 4.5, 4.7, 5.1, 5.5, 5.9, 6.3, 6.8, 7.1])
-# y = np.array([102.56, 113.18, 130.11, 142.05, 167.53,
-#               195.14, 224.87, 256.73, 299.50, 326.72])
-# y = np.array([log(yi) for yi in y])
-
-x = np.array([-1, 0, 1, 1.5])
-y = np.array([3.1, 0.9, 2.9, 2])
-
-deg = 2
+deg = 1
 
 A = curve_fit(x, y, deg)
 print('Coefficients (highest power of x to lowest):', A)
-
-# # Degree 1 (linear) example
-# x = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-# y = np.array([1.3, 3.5, 4.2, 5.0, 7.0, 8.8, 10.1, 12.5, 13.0, 15.6])
-
-# A = curve_fit(x, y)
-# print('Coefficients (highest power of x to lowest):', A)
