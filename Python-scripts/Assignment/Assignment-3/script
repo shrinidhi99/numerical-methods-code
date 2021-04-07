@@ -1,22 +1,21 @@
 Dear ma'am,
-My name is Shrinidhi Varna. I am going to present my assignment which includes 4 examples taken from 3 fields of my interest.
-Since I am pursuing Computer Science Engineering, two of my applications are from my field of Engineering although from different branches of my branch.
-I will begin my presentation with two applications of numerical methods in the field of physical chemistry which used to be one of my favourite subjects
+My name is Shrinidhi Varna. I will present my assignment, which includes four examples taken from 3 fields of my interest.
+Since I am pursuing Computer Science Engineering, two of my applications are from my Engineering field, although from different branches.
+I will begin my presentation with two applications of numerical methods in the field of physical chemistry, which used to be one of my favourite subjects
 before joining college.
-Here is a chemical equation where water splits into its constituent elements at higher temperature. There are some physical quantities related to this
-chemical change which we needn't bother much here. All that we are looking for here is the mathematical model which is underlying in this chemical challenge.
+Here is a chemical equation where water splits into its constituent elements at a higher temperature. There are some physical quantities related to this
+chemical change which we needn't bother much here. All that we are looking for here is the mathematical model which is underlying this chemical change.
 
-k is equal to f by 1-f into square root of 2p by 2 + f.
-The equilibrium constant, k, expresses the relationship between products and reactants of a reaction at equilibrium with respect to a specific unit.
+K is equal to f by 1-f into the square root of 2p by 2 + f.
+The equilibrium constant, k, expresses the relationship between products and reactants of a reaction at equilibrium concerning a specific unit.
 
-This equation comes as a result of applying chemical equilibrium concept which I had studied during my JEE days.
-p here is 3.5 atmospheres as per the experimental setup. Similarly, k is equal to 0.04.
+This equation comes from applying the chemical equilibrium concept that I had studied during my JEE days.
+P here is 3.5 atmospheres as per the experimental setup. Similarly, k is equal to 0.04.
 
-Since k and p are known quantities, we are interested in finding the value of f. As the equation looks tough to calculate, its better to apply a root
-finding approximation method here. One such method is Newton Raphson.
+Since k and p are known quantities, we are interested in finding the value of f. As the equation looks tough to calculate, it's better to apply a root-finding approximation method here. One such method is Newton Raphson.
 
-To convert this equation to a form on which Newton Raphson method can be applied, we shift the LHS to the RHS hence equating the RHS to 0.
-Now lets call this polynomial as F(f) which is equal to 0.04 - f/1-f into square root of 7 / 2 + f.
+To convert this equation to a form on which the Newton Raphson method can be applied, we shift the LHS to the RHS hence equating the RHS to 0.
+Now, let's call this polynomial F(f) equal to 0.04 - f/1-f into a square root of 7 / 2 + f.
 
 As per Newton Raphson method, f(i+1) = f(i) - F(f(i))/F'(f(i)) where i is a whole number. We take initial guess of f as 0.1.
 
@@ -27,50 +26,50 @@ The second one represents epoch vs error.
 
 So, the value of f is equal to 0.0210408.
 
-Moving on to the next example, which is also based on chemistry but not directly. It is linked with environmental studies too.
+I am moving on to the next example, which is also based on chemistry but not directly. It is linked with environmental studies too.
 Here is the mathematical model. Our objective is to minimize the wastage of oxygen level in the sewage.
-As we know, to find a local minimum, we need to find double derivative of a function.
+To find a local minimum, we need to find the double derivative of a function.
 
 We can compute the local minimum of C by making slight changes in the Newton Raphson method. In place of C(c(i)) we can take C'(c(i)) and similarly,
 we can replace C'(c(i)) with C"(c(i)). 
 Now the equation looks like, c(i+1) = c(i) - C'(c(i))/C"(c(i)), where i is a whole number.
-Lets take an initial guess of c as 0.1.
-Once we run the code, we obtain the value of C which takes 6 iterations to converge with an error tolerance set to 10^-6.
+Let's take an initial guess of c as 0.1.
+Once we run the code, we obtain C's value, which takes six iterations to converge with an error tolerance set to 10^-6.
 
-So far we have made use of Newton Raphson method in 2 different ways. The equation looks same but the purpose or application is completely different.
+So far, we have made use of the Newton Raphson method in 2 different ways. The equation looks the same, but the purpose or application is entirely different.
 If our initial guess is too far away from the final value, the method might take some more iterations to converge. So some intuition can definitely help
 while setting an initial guess.
 
-Lets move on to the third application which is from one of my current favourite fields of computer science, that is, digital image processing.
-Our aim is to detect edges in an image. An easy way to find them is using gradient along both x and y directions.
+Let's move on to the third application from one of my current favourite fields of computer science: digital image processing.
+We aim to detect edges in an image. An easy way to find them is using gradient along with both x and y directions.
 We can make use of Newton's forward difference of 1st order to compute the respective gradients.
 
-Once we have both the gradient vectors, we just need to find the magnitude of gradients at each pixel which can be computed by taking square root of
+Once we have both the gradient vectors, we need to find the magnitude of gradients at each pixel which can be computed by taking the square root of
 the sum of squares of gradients along x and y directions.
-Lets experiment it straightaway.
+Let's experiment with it straightaway.
 Our original image is of a cameraman.
-It is read as a grayscale image. We fetch the dimensions of the image which will be needed in further steps.
-We initialize gradient along x and y as 0 initially. We do the same with respect to Image vector I and magnitude of gradient vector.
-First we copy the image pixel values into a 2D vector for ease of computing using the known data structures.
-We compute the forward difference of vector I in x direction and store the pixel by pixel result in grad_x.
-We repeat the same process but in y direction and store it in grad_y.
-Here horizontal traversal of the matrix implies moving in x direction and vertical traversal of the same as y direction.
+It is read as a grayscale image. We fetch the dimensions of the image, which will be needed in further steps.
+We initialize gradient along x and y as 0 initially. We do the same concerning Image vector I and the magnitude of the gradient vector.
+First, we copy the image pixel values into a 2D vector for computing ease using the known data structures.
+We compute the forward difference of vector I in the x-direction and store the pixel by pixel result in grad_x.
+We repeat the same process but in the y-direction and store it in grad_y.
+Here horizontal traversal of the matrix implies moving in x-direction and vertical traversal of the same as y-direction.
 
-We compute the magnitude of gradientat each pixel using the earlier mentioned formula.
+We compute the magnitude of the gradient at each pixel using the earlier mentioned formula.
 
 We then display the images and save them.
 
-Moving on to the last example which is a very common thing in machine learning. It is the concept of regression.
+I am moving on to the last example, which is a prevalent one in machine learning. It is the concept of regression.
 Regression can be both linear and non-linear in a single variable.
-We use both the forms of regression to fit the given data using the principles of least squares.
+We use both forms of regression to fit the given data using the principles of least squares.
 
-Once we fit the data for degree 1 and 2, we obtain the coefficients of the respective polynomials.
+Once we fit the data for degrees 1 and 2, we obtain the respective polynomials' coefficients.
 
 We then compute y_1 and y_2 for each value of x and get the y value corresponding to x as per the two newly found polynomial equations.
-Since the error is less for degree 2, we can get an idea as to how the curves might look and which one might overlap more with the original curve.
+Since the error is lesser for degree 2, we can get an idea of how the curves might look and which might overlap more with the original curve.
 We then plot the curves and obtain the following graphs.
-No surprises here that the second degree approximation fits the datapoints better.
+The second-degree approximation fits the data points better, which shouldn't surprise us after looking at the errors we obtained.
 
-Thats it for my presentation.
+That's it for my presentation.
 
 Thank you.
